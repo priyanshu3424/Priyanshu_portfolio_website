@@ -47,6 +47,7 @@ body {
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-direction: column; /* Mobile-first approach */
   align-items: center;
   justify-content: center;
   padding-top: 50px;
@@ -59,20 +60,21 @@ body {
 
 .hero-content-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 40px;
   max-width: 1200px;
   width: 100%;
 }
 
 .profile-picture {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  margin-bottom: 20px; /* Add some space below the image */
 }
 .profile-picture img {
   width: 100%;
@@ -84,7 +86,8 @@ body {
 .hero-text-content {
   flex-grow: 1;
   max-width: 700px;
-  text-align: left;
+  text-align: center;
+  padding: 0 15px; /* Add some padding for smaller screens */
 }
 
 .hero-name {
@@ -94,7 +97,7 @@ body {
   margin-bottom: 8px;
   color: #F8F8F8;
   line-height: 1.1;
-  text-align: left;
+  text-align: center;
 }
 
 .hero-profession {
@@ -105,7 +108,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 25px;
   animation: pulseText 2s infinite alternate;
-  text-align: left;
+  text-align: center;
 }
 
 .hero-bio {
@@ -126,6 +129,8 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   max-width: 650px;
   border: 1px solid #3A3A3A;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .education-details h3 {
@@ -540,7 +545,9 @@ h2::after {
   box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
 
-/* Responsive Design for smaller screens */
+/* --- Responsive Design --- */
+
+/* For screens up to 1200px (e.g., small laptops, large tablets) */
 @media (max-width: 1200px) {
   .App {
     padding: 0 40px;
@@ -554,10 +561,10 @@ h2::after {
     gap: 40px;
   }
   .hero-text-content {
-    text-align: left;
+    text-align: center;
   }
   .hero-name, .hero-profession, .hero-bio {
-    text-align: left;
+    text-align: center;
   }
   h2 {
     font-size: 3em;
@@ -574,57 +581,41 @@ h2::after {
     margin-right: auto;
   }
   .education-details h3, .education-details p {
-    text-align: left;
+    text-align: center;
   }
   .contact-detail-large {
     font-size: 1.4em;
   }
-  
   /* Skills Grid for medium screens */
   .skills-grid.four-per-row, 
-  .skills-grid.five-per-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .skills-grid.three-per-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .skills-grid.five-per-row, 
+  .skills-grid.three-per-row, 
   .skills-grid.two-per-row {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .hero-section {
-    padding-top: 40px;
-    padding-bottom: 10px;
-    min-height: 50vh;
-  }
-  .hero-text-content {
-    text-align: left;
-  }
-  .hero-name, .hero-profession {
-    text-align: left;
-  }
 }
 
+/* For screens up to 768px (e.g., tablets) */
 @media (max-width: 768px) {
+  .App {
+    padding: 0 25px;
+  }
   .header {
-    flex-direction: column;
-    padding: 15px 20px;
-    align-items: flex-end;
+    padding: 15px 25px;
   }
   .hero-name {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .hero-profession {
-    font-size: 2em;
-    letter-spacing: 2px;
+    font-size: 1.8em;
   }
   .hero-bio {
-    font-size: 1.05em;
-    padding: 0 10px;
+    font-size: 1em;
+    padding: 0;
     text-align: justify;
   }
   h2 {
-    font-size: 2.3em;
+    font-size: 2.2em;
     margin-bottom: 30px;
   }
   section {
@@ -633,70 +624,64 @@ h2::after {
   .profile-picture {
     width: 200px;
     height: 200px;
+    margin: 0 auto 20px auto; /* Center align and add space */
+  }
+  .hero-text-content {
+    text-align: center;
+  }
+  .hero-name, .hero-profession, .hero-bio {
+    text-align: center;
+  }
+  .education-details h3, .education-details p {
+    text-align: center;
+  }
+  .skill-item {
+    padding: 30px;
   }
   .skill-item img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
   }
   .skill-item h3 {
     font-size: 1.1em;
   }
-  .project-card img {
-    height: 180px;
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack projects vertically */
+    gap: 30px;
   }
-  .project-card .project-content {
-    padding: 20px;
+  .project-card img {
+    height: 200px;
   }
   .contact-section form {
     padding: 30px;
   }
   .contact-detail-large {
-    font-size: 1.2em;
-    flex-direction: column;
-    gap: 5px;
+    font-size: 1.1em;
+    flex-direction: row;
+    gap: 10px;
   }
-  .hero-section {
-    padding-top: 30px;
-    padding-bottom: 10px;
-    min-height: 45vh;
-  }
-  .hero-text-content {
-    text-align: left;
-  }
-  .hero-name, .hero-profession {
-    text-align: left;
-  }
-  
-  /* Skills Grid for tablets */
-  .skills-grid.four-per-row, 
-  .skills-grid.five-per-row, 
-  .skills-grid.three-per-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .skills-grid.two-per-row {
-    grid-template-columns: repeat(2, 1fr);
+  .social-icon-link {
+    font-size: 2.5em;
   }
 }
 
+/* For screens up to 480px (e.g., mobile phones) */
 @media (max-width: 480px) {
   .App {
     padding: 0 15px;
   }
   .header {
-    padding: 15px 15px;
-    align-items: flex-end;
+    padding: 10px 15px;
   }
   .hero-name {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .hero-profession {
-    font-size: 1.5em;
-    letter-spacing: 1px;
+    font-size: 1.3em;
   }
   .hero-bio {
     font-size: 0.9em;
-    text-align: justify;
   }
   h2 {
     font-size: 1.8em;
@@ -704,7 +689,7 @@ h2::after {
   }
   h2::after {
     width: 70px;
-    height: 4px;
+    height: 3px;
   }
   section {
     padding: 30px 0px;
@@ -712,53 +697,61 @@ h2::after {
   .profile-picture {
     width: 150px;
     height: 150px;
+    margin: 0 auto 20px auto; /* Center align and add space */
+  }
+  .hero-text-content {
+    text-align: center;
+  }
+  .hero-name, .hero-profession, .hero-bio {
+    text-align: center;
+  }
+  .education-details h3, .education-details p {
+    text-align: center;
+  }
+  .skills-grid.four-per-row, 
+  .skills-grid.five-per-row, 
+  .skills-grid.three-per-row,
+  .skills-grid.two-per-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .skill-item {
+    padding: 20px;
   }
   .skill-item img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
   .skill-item h3 {
-    font-size: 1em;
+    font-size: 0.9em;
   }
-  .projects-grid a {
-    padding: 10px 15px;
-    font-size: 0.85em;
+  .projects-grid {
+    gap: 20px;
   }
-  .contact-section input, .contact-section textarea {
-    padding: 10px;
-    font-size: 0.95em;
+  .project-card .project-content {
+    padding: 20px;
   }
-  .contact-section button {
-    padding: 12px;
-    font-size: 1em;
+  .project-card h3 {
+    font-size: 1.5em;
   }
-  .download-button {
-    padding: 12px 25px;
-    font-size: 1.1em;
+  .project-card a {
+    padding: 10px 18px;
+    font-size: 0.8em;
   }
   .contact-detail-large {
     font-size: 1em;
+    flex-direction: column;
+    gap: 5px;
   }
-  
-  /* Skills Grid for mobile phones */
-  .skills-grid.four-per-row, 
-  .skills-grid.five-per-row, 
-  .skills-grid.three-per-row {
-    grid-template-columns: repeat(2, 1fr);
+  .social-icon-link {
+    font-size: 2em;
+    padding: 5px;
   }
-  .skills-grid.two-per-row {
-    grid-template-columns: repeat(1, 1fr);
+  .contact-section form {
+    padding: 20px;
   }
-
-  .hero-section {
-    padding-top: 20px;
-    padding-bottom: 5px;
-    min-height: 40vh;
-  }
-  .hero-text-content {
-    text-align: left;
-  }
-  .hero-name, .hero-profession {
-    text-align: left;
+  .contact-section input, .contact-section textarea {
+    padding: 12px;
+    font-size: 0.9em;
   }
 }
