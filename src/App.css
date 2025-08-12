@@ -6,8 +6,6 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #0D0D0D; 
-  /* Yeh line browser ki default styling ko override karti hai */
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -29,7 +27,7 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 80px;
-  background-color: #0D0D0D; 
+  background-color: #0D0D0D;
   min-height: 100vh; /* Ensures the background covers the entire viewport */
 }
 
@@ -632,7 +630,7 @@ h2::after {
   .profile-picture {
     width: 200px;
     height: 200px;
-    margin: 0 auto 20px auto; /* Center align and add space */
+    margin: 0 auto 20px auto;
   }
   .hero-text-content {
     text-align: center;
@@ -655,7 +653,7 @@ h2::after {
     font-size: 1.1em;
   }
   .projects-grid {
-    grid-template-columns: 1fr; /* Stack projects vertically */
+    grid-template-columns: 1fr;
     gap: 30px;
   }
   .project-card img {
