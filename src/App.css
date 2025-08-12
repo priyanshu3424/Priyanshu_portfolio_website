@@ -222,6 +222,7 @@ h2::after {
   letter-spacing: 1px;
 }
 
+/* FIX: Main skills grid, ab yeh chote screens par wrap ho jayega */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -231,30 +232,8 @@ h2::after {
   margin-top: 0px;
 }
 
-/* Specific grid layouts for consistent look */
-.skills-grid.five-per-row {
-  grid-template-columns: repeat(5, 1fr);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.skills-grid.four-per-row {
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.skills-grid.three-per-row {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.skills-grid.two-per-row {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 500px;
-  margin: 0 auto;
-}
+/* NOTE: Removed the fixed 'four-per-row', 'five-per-row' classes
+         for better responsiveness. 'auto-fit' will handle it. */
 
 .skill-item {
   padding: 40px;
@@ -594,11 +573,8 @@ h2::after {
     font-size: 1.4em;
   }
   /* Skills Grid for medium screens */
-  .skills-grid.four-per-row, 
-  .skills-grid.five-per-row, 
-  .skills-grid.three-per-row, 
-  .skills-grid.two-per-row {
-    grid-template-columns: repeat(2, 1fr);
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr)); /* Ab har line mein 3 skills */
   }
 }
 
@@ -641,6 +617,10 @@ h2::after {
   }
   .education-details h3, .education-details p {
     text-align: center;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* Ab har line mein 2 skills */
+    gap: 30px;
   }
   .skill-item {
     padding: 30px;
@@ -715,11 +695,8 @@ h2::after {
   .education-details h3, .education-details p {
     text-align: center;
   }
-  .skills-grid.four-per-row, 
-  .skills-grid.five-per-row, 
-  .skills-grid.three-per-row,
-  .skills-grid.two-per-row {
-    grid-template-columns: 1fr; /* Changed to a single column on mobile */
+  .skills-grid {
+    grid-template-columns: 1fr; /* Ab har skill ek alag line mein aayega */
     gap: 25px;
   }
   .skill-item {

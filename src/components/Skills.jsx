@@ -32,11 +32,11 @@ const Skills = () => {
         <div className="skills-grid three-per-row">
           <div className="skill-item">
             <img src="/images/skills/html.png" alt="HTML5" />
-            <h3>HTML5</h3>
+            <h3>HTML</h3>
           </div>
           <div className="skill-item">
             <img src="/images/skills/css.png" alt="CSS3" />
-            <h3>CSS3</h3>
+            <h3>CSS</h3>
           </div>
           <div className="skill-item">
             <img src="/images/skills/react.png" alt="React" />
