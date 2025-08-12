@@ -5,14 +5,15 @@
 html, body {
   margin: 0;
   padding: 0;
-  /* Ensure the background covers the entire viewport */
   background-color: #0D0D0D; 
+  /* Yeh line browser ki default styling ko override karti hai */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.8;
-  color: #E0E0E0; /* Lighter grey for general text */
+  color: #E0E0E0;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -28,6 +29,8 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 80px;
+  background-color: #0D0D0D; 
+  min-height: 100vh; /* Ensures the background covers the entire viewport */
 }
 
 /* Header Styling (Desktop) */
@@ -52,7 +55,7 @@ body {
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Mobile-first approach */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 50px;
@@ -79,7 +82,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-  margin-bottom: 20px; /* Add some space below the image */
+  margin-bottom: 20px;
 }
 .profile-picture img {
   width: 100%;
@@ -92,7 +95,7 @@ body {
   flex-grow: 1;
   max-width: 700px;
   text-align: center;
-  padding: 0 15px; /* Add some padding for smaller screens */
+  padding: 0 15px;
 }
 
 .hero-name {
@@ -674,10 +677,10 @@ h2::after {
 /* For screens up to 480px (e.g., mobile phones) */
 @media (max-width: 480px) {
   .App {
-    padding: 0 15px;
+    padding: 0 20px; /* Adjusted padding for better alignment */
   }
   .header {
-    padding: 10px 15px;
+    padding: 10px 20px;
   }
   .hero-name {
     font-size: 2em;
@@ -702,7 +705,7 @@ h2::after {
   .profile-picture {
     width: 150px;
     height: 150px;
-    margin: 0 auto 20px auto; /* Center align and add space */
+    margin: 0 auto 20px auto;
   }
   .hero-text-content {
     text-align: center;
@@ -717,7 +720,7 @@ h2::after {
   .skills-grid.five-per-row, 
   .skills-grid.three-per-row,
   .skills-grid.two-per-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr; /* Changed to a single column on mobile */
     gap: 25px;
   }
   .skill-item {
