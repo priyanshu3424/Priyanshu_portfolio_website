@@ -7,7 +7,7 @@ const Skills = () => {
 
       <div className="category-container">
         <h3>Languages</h3>
-        <div className="skills-grid four-per-row">
+        <div className="skills-grid">
           <div className="skill-item">
             <img src="/images/skills/c.png" alt="C" />
             <h3>C</h3>
@@ -17,19 +17,19 @@ const Skills = () => {
             <h3>C++</h3>
           </div>
           <div className="skill-item">
-            <img src="/images/skills/javascript.png" alt="JavaScript" />
-            <h3>JavaScript</h3>
-          </div>
-          <div className="skill-item">
             <img src="/images/skills/python.png" alt="Python" />
             <h3>Python</h3>
+          </div>
+          <div className="skill-item">
+            <img src="/images/skills/javascript.png" alt="JavaScript" />
+            <h3>JavaScript</h3>
           </div>
         </div>
       </div>
 
       <div className="category-container">
         <h3>Web Technologies</h3>
-        <div className="skills-grid three-per-row">
+        <div className="skills-grid">
           <div className="skill-item">
             <img src="/images/skills/html.png" alt="HTML5" />
             <h3>HTML</h3>
@@ -59,7 +59,7 @@ const Skills = () => {
 
       <div className="category-container">
         <h3>Databases</h3>
-        <div className="skills-grid three-per-row">
+        <div className="skills-grid">
           <div className="skill-item">
             <img src="/images/skills/mongodb.png" alt="MongoDB" />
             <h3>MongoDB</h3>
@@ -77,7 +77,7 @@ const Skills = () => {
 
       <div className="category-container">
         <h3>Tools & Platforms</h3>
-        <div className="skills-grid four-per-row">
+        <div className="skills-grid">
           <div className="skill-item">
             <img src="/images/skills/git.png" alt="Git" />
             <h3>Git</h3>
